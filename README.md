@@ -12,10 +12,16 @@
 ```
 impacta-labs/
 └── feat/grupo3_2025_mba_de_07/
+    └── src/
+        ├── gera_produtos.py
+        ├── gera_clientes.py
+        ├── gera_vendas.py
     ├── README.MD
     ├── clientes.json
     ├── produtos.json
     ├── vendas.json
+    ├── .gitignore
+    ├── requirements.txt
     └── command_mongo.sh
 ```
 
@@ -271,7 +277,34 @@ db.vendas.aggregate([
 - **produtos**: Catálogo centralizado para consistência de preços/estoque
 - **vendas**: Transacionais com embedding para performance
 
-## 8. Conclusão
+### 8. **Extra - Gerar dados**
+
+- **Clientes (`gerar_clientes.py`)**  
+  Responsável por criar registros de clientes no arquivo `clientes.json`.
+
+- **Produtos (`gerar_produtos.py`)**  
+  Responsável por criar registros de produtos no arquivo `produtos.json`.
+
+- **Vendas/Eventos (`gerar_vendas.py`)**  
+  Responsável por gerar eventos de vendas no arquivo `vendas.json`, utilizando clientes e produtos já cadastrados.
+
+### Como executar
+
+Após criar o ambiente virtual e instalar as dependências de requirements.txt, execute:
+
+1. Gere os produtos:
+   ```bash
+   python ./src/gera_produtos.py
+
+2. Gere os clientes:
+   ```bash
+   python ./src/gera_clientes.py
+
+3. Gere as vendas:
+   ```bash
+   python ./src/gera_vendas.py
+
+## 9. Conclusão
 
 A arquitetura proposta para a Amazonas equilibra eficientemente as necessidades atuais de negócio com flexibilidade para expansão futura. Através de:
 
